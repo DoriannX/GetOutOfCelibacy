@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     List<Button> _buttons = new List<Button>();
 
     //Dialogues
-    private Dialogues _nextDialogue;
+    public Dialogues DialogueNext;
 
     //Dialogue manager
     private bool _isDialogueStarted = false;
@@ -37,12 +37,20 @@ public class DialogueManager : MonoBehaviour
     //Coroutines
     private Coroutine _dialogueCoroutine;
 
+    //Instance
+    public static DialogueManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
 
     private void Start()
     {
         _dialogueBoxTransform = _dialogueBox.GetComponent<RectTransform>();
         _basePosition = _dialogueBoxTransform.localPosition;
-        _nextDialogue = _firstDialogue;
+        DialogueNext = _firstDialogue;
     }
 
     public void SwitchDialogue()
@@ -59,16 +67,15 @@ public class DialogueManager : MonoBehaviour
         _dialogueDisplayer.text = "";
         _textIndex = 0;
         _dialogueIndex = 0;
-        _nextDialogue = _firstDialogue;
+        DialogueNext = _firstDialogue;
         _dialogueCoroutine = StartCoroutine(DisplayText());
         DisplayButtons();
     }
 
     public void NextDialogue(Dialogues nextDialogue)
     {
-
-        
-        _nextDialogue = nextDialogue;
+        ItemManager.Instance.DisplayObjectToSelect();
+        DialogueNext = nextDialogue;
         _dialogueDisplayer.text = "";
         _textIndex = 0;
         _dialogueIndex++;
@@ -77,6 +84,9 @@ public class DialogueManager : MonoBehaviour
 
     private void StopDialogue()
     {
+        ItemManager.Instance.DestroyObjectToSelect();
+        ItemManager.Instance.NextButton.gameObject.SetActive(false);
+        ItemManager.Instance.IsItemChosen = false;
         _isDialogueStarted = false;
         print("dialogue finish");
         StopCoroutines();
@@ -89,14 +99,17 @@ public class DialogueManager : MonoBehaviour
             _buttons.Remove(bt);
             Destroy(bt.gameObject);
         }
-        for (int i = 0; i<_nextDialogue.choix.Count; i++)
+        if(!ItemManager.Instance.IsItemChosen)
         {
-            print("button displayed");
-            Button button = Instantiate(_buttonChoice, _canvas.transform);
-            _buttons.Add(button);
-            button.GetComponent<RectTransform>().localPosition = buttonPos[i];
-            button.GetComponentInChildren<TextMeshProUGUI>().text = _nextDialogue.choix[i].name;
-            button.onClick.AddListener(delegate { NextDialogue(_nextDialogue.choix[i-1]); });
+            for (int i = 0; i < DialogueNext.choix.Count; i++)
+            {
+                print("button displayed");
+                Button button = Instantiate(_buttonChoice, _canvas.transform);
+                _buttons.Add(button);
+                button.GetComponent<RectTransform>().localPosition = buttonPos[i];
+                button.GetComponentInChildren<TextMeshProUGUI>().text = DialogueNext.choix[i].name;
+                button.onClick.AddListener(delegate { NextDialogue(DialogueNext.choix[i - 1]); });
+            }
         }
     }
 
@@ -115,9 +128,9 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator DisplayText()
     {
-        if (_textIndex < _nextDialogue.Dialogue.Length)
+        if (_textIndex < DialogueNext.Dialogue.Length)
         {
-            _dialogueDisplayer.text += _nextDialogue.Dialogue[_textIndex];
+            _dialogueDisplayer.text += DialogueNext.Dialogue[_textIndex];
             _textIndex++;
         }
         yield return new WaitForSeconds(.01f);

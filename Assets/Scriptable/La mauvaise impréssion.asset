@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
-  m_Name: La rencontre
+  m_Name: "La mauvaise impr\xE9ssion"
   m_EditorClassIdentifier: 
-  Dialogue: "Avant de m'y rendre je devrais peut \xEAtre m'habiller d'une certaine
-    fa\xE7on"
+  Dialogue: "Oulah qu'est ce que c'est que \xE7a ?\nBref passons."
   greenFlag: 0
   redFlag: 0
-  choix:
-  - {fileID: 11400000, guid: f5cad0cc9d97daa478b6deb37651788a, type: 2}
-  - {fileID: 11400000, guid: d8a7e6a6bce6ba54aa94ac308fe22caf, type: 2}
-  - {fileID: 11400000, guid: 5894ff755749db648bf03f4686b5e25c, type: 2}
+  choix: []
