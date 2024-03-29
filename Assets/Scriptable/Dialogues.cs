@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Dialogues", order = 1)]
 public class Dialogues : ScriptableObject
@@ -9,4 +10,5 @@ public class Dialogues : ScriptableObject
     public bool greenFlag;
     public bool redFlag;
     public List<Dialogues> choix = null;
+    public UnityEvent Event;
 }

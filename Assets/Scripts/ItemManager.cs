@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +10,8 @@ public class ItemManager : MonoBehaviour
     [SerializeField] List<Flags> _flags;
 
     //Positions
-    [SerializeField] List<Vector3> _positions;
+    [SerializeField] Vector3 _position;
+    List<Vector3> _positions = new List<Vector3>();
 
     //Buttons
     [SerializeField] Toggle _toggle;
@@ -24,7 +23,8 @@ public class ItemManager : MonoBehaviour
 
     public static ItemManager Instance;
 
-    public bool IsItemChosen;
+    public bool IsItemChosen = false;
+    public bool IsItemBeingChose;
 
     private void Awake()
     {
@@ -35,23 +35,34 @@ public class ItemManager : MonoBehaviour
     private void Start()
     {
         NextButton.gameObject.SetActive(false);
+        SetPositions();
+    }
+
+    private void SetPositions()
+    {
+        _positions.Add(_position);
+        for(int i = 1; i < _items.Count; i++)
+        {
+            _positions.Add(_positions[i - 1] + new Vector3(0, 75, 0));
+        }
     }
 
     public void DisplayObjectToSelect()
     {
-        if (!IsItemChosen)
+        if (!IsItemBeingChose)
         {
             for (int i = 0; i < _items.Count; i++)
             {
                 _toggles.Add(Instantiate(_toggle, _canvas.transform));
                 _toggles[i].GetComponentInChildren<Text>().text = _items[i];
                 _toggles[i].GetComponent<RectTransform>().localPosition = _positions[i];
-                IsItemChosen = true;
+                IsItemBeingChose = true;
             }
             NextButton.gameObject.SetActive(true);
         }
         else
         {
+            IsItemChosen = true;
             print(PointsToAdd());
             DestroyObjectToSelect();
         }

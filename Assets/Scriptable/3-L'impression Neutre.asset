@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 3-L'impression Neutre
+  m_EditorClassIdentifier: 
+  Dialogue: "C\u2019est g\xE9nial, j\u2019ai pu entrer sans aucun probl\xE8me. Maintenant,
+    il s\u2019agit de d\xE9couvrir ses go\xFBts.\nDate : Salut !"
+  greenFlag: 0
+  redFlag: 0
+  choix:
+  - {fileID: 11400000, guid: 94c19f86ac98c114bbefd74a7de8d501, type: 2}
+  - {fileID: 11400000, guid: d02692a2ed7bdb6409e3945a8b920765, type: 2}
+  - {fileID: 11400000, guid: 2d81a3cf3216767498c6891bc51a1e97, type: 2}

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
-  m_Name: "La bonne impr\xE9ssion"
+  m_Name: 30-La romance
   m_EditorClassIdentifier: 
-  Dialogue: "Date : Hey j'aime beaucoup comment t'es habill\xE9s\r\nOn se fait la
-    bise ?"
-  greenFlag: 0
+  Dialogue: "Ouhh tu aimes donc tout ce qui est romantique j'aime \xE7a. Tu veux
+    qu'on aille s'en regarder quelques un chez moi ?"
+  greenFlag: 1
   redFlag: 0
-  choix: []
+  choix:
+  - {fileID: 11400000, guid: 2f573ae6d4029834d97c05faf52f80b9, type: 2}

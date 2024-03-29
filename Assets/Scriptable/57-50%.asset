@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 57-50%
+  m_EditorClassIdentifier: 
+  Dialogue: "D'accord. D'ailleurs tu as regard\xE9 open bar vendredi dernier ?"
+  greenFlag: 0
+  redFlag: 0
+  choix:
+  - {fileID: 11400000, guid: 7f61ee8553042114ca599a20feb3f418, type: 2}
+  - {fileID: 11400000, guid: fce9a87a3f48b2947adc050c3901052e, type: 2}

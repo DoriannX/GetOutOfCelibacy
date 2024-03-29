@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
-  m_Name: L'impression Neutre
+  m_Name: 63-Mort
   m_EditorClassIdentifier: 
-  Dialogue: "C\u2019est g\xE9nial, j\u2019ai pu entrer sans aucun probl\xE8me. Maintenant,
-    il s\u2019agit de d\xE9couvrir ses go\xFBts."
+  Dialogue: "Oulah je vais y aller. Je n'aime pas les d\xE9pressif."
   greenFlag: 0
-  redFlag: 0
-  choix: []
+  redFlag: 1
+  choix:
+  - {fileID: 11400000, guid: 7035eb628bc1c56458485f5c8c1835d7, type: 2}

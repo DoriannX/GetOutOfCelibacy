@@ -26,7 +26,6 @@ public class DialogueManager : MonoBehaviour
 
     //Dialogue manager
     private bool _isDialogueStarted = false;
-    private int _dialogueIndex = 0;
     int _textIndex = 0;
     [HideInInspector] public UnityEvent DialogueFinished;
 
@@ -66,7 +65,6 @@ public class DialogueManager : MonoBehaviour
         _isDialogueStarted = true;
         _dialogueDisplayer.text = "";
         _textIndex = 0;
-        _dialogueIndex = 0;
         DialogueNext = _firstDialogue;
         _dialogueCoroutine = StartCoroutine(DisplayText());
         DisplayButtons();
@@ -78,8 +76,18 @@ public class DialogueManager : MonoBehaviour
         DialogueNext = nextDialogue;
         _dialogueDisplayer.text = "";
         _textIndex = 0;
-        _dialogueIndex++;
+        if(_dialogueCoroutine == null)
+            _dialogueCoroutine = StartCoroutine(DisplayText());
+        if(nextDialogue.Event != null)
+            nextDialogue.Event.Invoke();
         DisplayButtons();
+    }
+
+    public void SkipDialogue()
+    {
+        _dialogueDisplayer.text = DialogueNext.Dialogue;
+        if(_dialogueCoroutine != null)
+            StopCoroutines();
     }
 
     private void StopDialogue()
@@ -87,6 +95,12 @@ public class DialogueManager : MonoBehaviour
         ItemManager.Instance.DestroyObjectToSelect();
         ItemManager.Instance.NextButton.gameObject.SetActive(false);
         ItemManager.Instance.IsItemChosen = false;
+        ItemManager.Instance.IsItemBeingChose = false;
+        foreach (Button bt in _buttons.ToList())
+        {
+            _buttons.Remove(bt);
+            Destroy(bt.gameObject);
+        }
         _isDialogueStarted = false;
         print("dialogue finish");
         StopCoroutines();
@@ -94,21 +108,22 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayButtons()
     {
+        
         foreach (Button bt in _buttons.ToList())
         {
             _buttons.Remove(bt);
             Destroy(bt.gameObject);
         }
-        if(!ItemManager.Instance.IsItemChosen)
+        if(!ItemManager.Instance.IsItemBeingChose || ItemManager.Instance.IsItemChosen)
         {
             for (int i = 0; i < DialogueNext.choix.Count; i++)
             {
-                print("button displayed");
                 Button button = Instantiate(_buttonChoice, _canvas.transform);
                 _buttons.Add(button);
                 button.GetComponent<RectTransform>().localPosition = buttonPos[i];
                 button.GetComponentInChildren<TextMeshProUGUI>().text = DialogueNext.choix[i].name;
-                button.onClick.AddListener(delegate { NextDialogue(DialogueNext.choix[i - 1]); });
+                Dialogues curDial = DialogueNext.choix[i];
+                button.onClick.AddListener(delegate { NextDialogue(curDial); });
             }
         }
     }
@@ -141,6 +156,11 @@ public class DialogueManager : MonoBehaviour
     private void StopCoroutines()
     {
         if( _dialogueCoroutine != null )
+        {
+            print("coroutine stopped");
             StopCoroutine(_dialogueCoroutine);
+            _dialogueCoroutine = null;
+        }
     }
+
 }

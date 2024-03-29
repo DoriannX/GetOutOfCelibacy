@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
-  m_Name: "La mauvaise impr\xE9ssion"
+  m_Name: 32-Les isekais
   m_EditorClassIdentifier: 
-  Dialogue: "Oulah qu'est ce que c'est que \xE7a ?\nBref passons."
+  Dialogue: Oh. C'est un style.
   greenFlag: 0
-  redFlag: 0
-  choix: []
+  redFlag: 1
+  choix:
+  - {fileID: 11400000, guid: 2f573ae6d4029834d97c05faf52f80b9, type: 2}

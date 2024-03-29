@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 19-Squeezie
+  m_EditorClassIdentifier: 
+  Dialogue: "LE SQUEEZOOOOOS ! Moi aussi trop bien ! Tiens mon num\xE9ro on pourra
+    en parler chez "
+  greenFlag: 1
+  redFlag: 0
+  choix:
+  - {fileID: 11400000, guid: e2b466df83a37034aad9f7e84b8b66d8, type: 2}

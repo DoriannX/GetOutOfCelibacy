@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 14-Ice tea
+  m_EditorClassIdentifier: 
+  Dialogue: "Parfait je vais prendre la m\xEAme chose !"
+  greenFlag: 0
+  redFlag: 0
+  choix:
+  - {fileID: 11400000, guid: 2890d8d583bd9a248a7f216300d6890b, type: 2}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 40-Ubisoft
+  m_EditorClassIdentifier: 
+  Dialogue: "Ouaw trop bien. Tu as donc du travailler sur de gros jeux vid\xE9os.
+    Parle moi en un peu plus."
+  greenFlag: 0
+  redFlag: 0
+  choix:
+  - {fileID: 11400000, guid: aeb5683fd449256408ca2c9de5e9b5b6, type: 2}
+  - {fileID: 11400000, guid: 7fbf408a8270d394a81b55cda0c8cf30, type: 2}
+  - {fileID: 11400000, guid: 5040e6062ecc13f45aae4a9e4c6fdfde, type: 2}

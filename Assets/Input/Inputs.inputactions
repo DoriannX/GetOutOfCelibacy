@@ -1,0 +1,34 @@
+{
+    "name": "Inputs",
+    "maps": [
+        {
+            "name": "Inputs",
+            "id": "5afe3678-5ff6-45dd-ad78-7c60c620b9cd",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "bc14c045-8726-448f-8c1a-f579b1800e71",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "befd6315-5006-4796-82b0-955e068444a6",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
