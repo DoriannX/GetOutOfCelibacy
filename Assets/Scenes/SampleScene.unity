@@ -267,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 398096618}
   - component: {fileID: 398096620}
+  - component: {fileID: 398096621}
   - component: {fileID: 398096619}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -314,9 +315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Next
-
-'
+  m_text: Next
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -343,10 +342,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 26.85
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -393,6 +392,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398096617}
   m_CullTransparentMesh: 1
+--- !u!114 &398096621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398096617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42e069e89a5bf04bb67fdac36169aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,18 +931,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21614434e6f459644bd826b87fd6dd27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items:
-  - Chapeau
-  - "\xC9charpe"
-  - Moustache
-  - Lunette et moustache
-  - "Pull de no\xEBl"
-  - Oreilles de chats
-  _flags: 010000000100000000000000010000000000000000000000
-  _position: {x: 700, y: 85, z: 0}
-  _toggle: {fileID: 3705556490743107518, guid: 560f09ff433193c4b940cb0c20499128, type: 3}
-  NextButton: {fileID: 2040573892}
+  _itemPrefabs:
+  - {fileID: 677205785758936947, guid: 25d2f1ed488b7db43bc765e77c512629, type: 3}
+  - {fileID: 677205785758936947, guid: 25d2f1ed488b7db43bc765e77c512629, type: 3}
+  - {fileID: 677205785758936947, guid: 25d2f1ed488b7db43bc765e77c512629, type: 3}
+  _flags: 010000000100000001000000
   _canvas: {fileID: 1714535273}
+  _firstItemBasePosition: {x: 770, y: 100, z: 0}
+  NextButton: {fileID: 2040573892}
   IsItemChosen: 0
   IsItemBeingChose: 0
 --- !u!4 &1367642840
@@ -1009,11 +1016,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1091,6 +1098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1460129582}
+  - component: {fileID: 1460129585}
   - component: {fileID: 1460129584}
   - component: {fileID: 1460129583}
   m_Layer: 5
@@ -1149,7 +1157,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1172,7 +1180,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1216,6 +1224,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460129581}
   m_CullTransparentMesh: 1
+--- !u!114 &1460129585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460129581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42e069e89a5bf04bb67fdac36169aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1664044218
 GameObject:
   m_ObjectHideFlags: 0

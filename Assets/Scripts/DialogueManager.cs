@@ -157,7 +157,6 @@ public class DialogueManager : MonoBehaviour
     {
         if( _dialogueCoroutine != null )
         {
-            print("coroutine stopped");
             StopCoroutine(_dialogueCoroutine);
             _dialogueCoroutine = null;
         }

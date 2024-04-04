@@ -6,25 +6,22 @@ using UnityEngine.UI;
 public class ItemManager : MonoBehaviour
 {
     enum Flags { RedFlag, GreenFlag, NeutralFlag }
-    [SerializeField] List<string> _items = new List<string>();
+    [SerializeField] List<GameObject> _itemPrefabs = new List<GameObject>();
+    List<GameObject> _itemsSpawned = new List<GameObject>();
     [SerializeField] List<Flags> _flags;
+    [SerializeField] Canvas _canvas;
 
     //Positions
-    [SerializeField] Vector3 _position;
-    List<Vector3> _positions = new List<Vector3>();
+    [SerializeField] Vector3 _firstItemBasePosition;
+    List<Vector3> _itemsPositions = new List<Vector3>();
 
     //Buttons
-    [SerializeField] Toggle _toggle;
     public Button NextButton;
-    List<Toggle> _toggles = new List<Toggle>();
-
-    //Components
-    [SerializeField] Canvas _canvas; 
 
     public static ItemManager Instance;
 
-    public bool IsItemChosen = false;
-    public bool IsItemBeingChose;
+    [HideInInspector] public bool IsItemChosen = false;
+    [HideInInspector] public bool IsItemBeingChose;
 
     private void Awake()
     {
@@ -40,10 +37,10 @@ public class ItemManager : MonoBehaviour
 
     private void SetPositions()
     {
-        _positions.Add(_position);
-        for(int i = 1; i < _items.Count; i++)
+        _itemsPositions.Add(_firstItemBasePosition);
+        for(int i = 1; i < _itemPrefabs.Count; i++)
         {
-            _positions.Add(_positions[i - 1] + new Vector3(0, 75, 0));
+            _itemsPositions.Add(_itemsPositions[i - 1] + new Vector3(0, 100, 0));
         }
     }
 
@@ -51,11 +48,10 @@ public class ItemManager : MonoBehaviour
     {
         if (!IsItemBeingChose)
         {
-            for (int i = 0; i < _items.Count; i++)
+            for (int i = 0; i < _itemPrefabs.Count; i++)
             {
-                _toggles.Add(Instantiate(_toggle, _canvas.transform));
-                _toggles[i].GetComponentInChildren<Text>().text = _items[i];
-                _toggles[i].GetComponent<RectTransform>().localPosition = _positions[i];
+                _itemsSpawned.Add(Instantiate(_itemPrefabs[i], _canvas.transform));
+                _itemsSpawned[i].GetComponent<RectTransform>().localPosition = _itemsPositions[i];
                 IsItemBeingChose = true;
             }
             NextButton.gameObject.SetActive(true);
@@ -70,10 +66,10 @@ public class ItemManager : MonoBehaviour
 
     public void DestroyObjectToSelect()
     {
-        foreach(Toggle toggle in _toggles.ToList())
+        foreach(GameObject itemSpawned in _itemsSpawned.ToList())
         {
-            _toggles.Remove(toggle);
-            Destroy(toggle.gameObject);
+            _itemsSpawned.Remove(itemSpawned);
+            Destroy(itemSpawned.gameObject);
         }
     }
 
@@ -81,9 +77,9 @@ public class ItemManager : MonoBehaviour
     {
         int points = 0;
 
-        for(int i =0; i < _toggles.Count; i++)
+        for(int i =0; i < _itemsSpawned.Count; i++)
         {
-            if (_toggles[i].isOn)
+            if (_itemsSpawned[i].GetComponent<Toggler>().IsSelected)
             {
                 switch (_flags[i])
                 {
@@ -104,6 +100,7 @@ public class ItemManager : MonoBehaviour
 
     public void ChoseNextDialogue()
     {
+        print("nextDialogue"); 
         NextButton.gameObject.SetActive(false);
         if (PointsToAdd() > 0)
             DialogueManager.Instance.NextDialogue(DialogueManager.Instance.DialogueNext.choix[0]);
