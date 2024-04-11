@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 25-Tu veux qu'on parle un peu de nos passions
+  m_EditorClassIdentifier: 
+  Name: '"Parlosn un peu de nos passions si tu veux bien"'
+  Dialogue: Oui, alors. Qu'est ce que tu aimes dans la vie ?
+  greenFlag: 0
+  redFlag: 0
+  Williams: 0
+  choix:
+  - {fileID: 11400000, guid: 1a57b31a6c230ea45a1872c10dbf6cdb, type: 2}
+  - {fileID: 11400000, guid: dea884082d1c553448c4d7af7c53b879, type: 2}
+  - {fileID: 11400000, guid: 69fc5c2e593578e468dbd744f6f8e33e, type: 2}
+  - {fileID: 11400000, guid: 8284fb829a35c594ebf54cc8abd21e0e, type: 2}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []

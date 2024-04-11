@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: "66-Meilleur fin secr\xE8te - Participer \xE0 open bar"
+  m_EditorClassIdentifier: 
+  Name: "Bonne fin secr\xE8te - *Participer \xE0 open bar*"
+  Dialogue: 
+  greenFlag: 1
+  redFlag: 0
+  Williams: 1
+  choix: []
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8270820177815629872, guid: 73f3895cc32576b47962d87e65785228, type: 3}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: LaunchOpenBarLive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

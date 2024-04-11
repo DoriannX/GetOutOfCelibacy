@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 12-Non
+  m_EditorClassIdentifier: 
+  Name: '"Non"'
+  Dialogue: "Ah.. Bon bah si \xE7a commence d\xE9j\xE0 comme \xE7a je pense que je
+    vais rentrer chez moi. Je ne veux pas perdre mon temps avec toi."
+  greenFlag: 0
+  redFlag: 1
+  Williams: 0
+  choix: []
+  Event:
+    m_PersistentCalls:
+      m_Calls: []

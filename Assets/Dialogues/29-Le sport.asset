@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 29-Le sport
+  m_EditorClassIdentifier: 
+  Name: '"Je suis un grand sportif"'
+  Dialogue: "Oh c'est cool \xE7a. Je n'aime pas sp\xE9cialement le sport mais j'aime
+    les personnes qui en font. Quel sport fais tu dans la vie ?"
+  greenFlag: 0
+  redFlag: 0
+  Williams: 0
+  choix:
+  - {fileID: 11400000, guid: be9ddae871ff71546b251e03c571bad8, type: 2}
+  - {fileID: 11400000, guid: 8f57d5a10d1791344a475d2a7fdbb588, type: 2}
+  - {fileID: 11400000, guid: 9c1a7bd8b5a9c3e4493a86b8dd883ea4, type: 2}
+  - {fileID: 11400000, guid: 42175b207b284ce4193c7e660d48c239, type: 2}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []

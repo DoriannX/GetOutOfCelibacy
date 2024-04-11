@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 38-Le chaval
+  m_EditorClassIdentifier: 
+  Name: "\"Le chaval c'est trop g\xE9nial\""
+  Dialogue: Oulah.. Je pense que tu peux rentrer en cheval dans ce cas. On ne va
+    pas pouvoir continuer.
+  greenFlag: 0
+  redFlag: 1
+  Williams: 0
+  choix:
+  - {fileID: 11400000, guid: 7035eb628bc1c56458485f5c8c1835d7, type: 2}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []

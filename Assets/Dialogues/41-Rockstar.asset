@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 41-Rockstar
+  m_EditorClassIdentifier: 
+  Name: '"Chez les meilleurs : Rockstar"'
+  Dialogue: "Oh c'est trop syl\xE9 !! Tu as travaill\xE9 sur quel jeu ??"
+  greenFlag: 1
+  redFlag: 0
+  Williams: 0
+  choix:
+  - {fileID: 11400000, guid: c58824ab68433bd46bc4e1e006d0f748, type: 2}
+  - {fileID: 11400000, guid: 78c48deac65c9ea45b2b7bdb0c172314, type: 2}
+  - {fileID: 11400000, guid: 2066ac3f301904846bb682499cfad27d, type: 2}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []

@@ -50,14 +50,13 @@ public class DialogueManager : MonoBehaviour
         _dialogueBoxTransform = _dialogueBox.GetComponent<RectTransform>();
         _basePosition = _dialogueBoxTransform.localPosition;
         DialogueNext = _firstDialogue;
+        _textSwitchButton.text = ">Start<";
     }
 
     public void SwitchDialogue()
     {
-        if (_isDialogueStarted)
-            StopDialogue();
-        else
-            StartDialogue();
+        StopDialogue();
+        StartDialogue();
     }
 
     private void StartDialogue()
@@ -68,14 +67,31 @@ public class DialogueManager : MonoBehaviour
         DialogueNext = _firstDialogue;
         _dialogueCoroutine = StartCoroutine(DisplayText());
         DisplayButtons();
+        DatedGirlSpriteManager.Instance.ChoseFace(DatedGirlSpriteManager.Face.Neutral, false);
+        _textSwitchButton.gameObject.SetActive(false);
     }
 
     public void NextDialogue(Dialogues nextDialogue)
     {
         ItemManager.Instance.DisplayObjectToSelect();
+        bool isWilliams = (nextDialogue.Williams);
+        if (nextDialogue.greenFlag)
+            DatedGirlSpriteManager.Instance.ChoseFace(DatedGirlSpriteManager.Face.Happy, isWilliams);
+        else if (nextDialogue.redFlag)
+            DatedGirlSpriteManager.Instance.ChoseFace(DatedGirlSpriteManager.Face.Disgust, isWilliams);
+        else
+            DatedGirlSpriteManager.Instance.ChoseFace(DatedGirlSpriteManager.Face.Neutral, isWilliams);
+
         DialogueNext = nextDialogue;
+        if (DialogueNext.choix.Count <= 0)
+        {
+            print("dialogues finished");
+            _textSwitchButton.text = ">Restart<";
+            _textSwitchButton.gameObject.SetActive(true);
+        }
         _dialogueDisplayer.text = "";
         _textIndex = 0;
+
         if(_dialogueCoroutine == null)
             _dialogueCoroutine = StartCoroutine(DisplayText());
         if(nextDialogue.Event != null)
@@ -108,7 +124,6 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayButtons()
     {
-        
         foreach (Button bt in _buttons.ToList())
         {
             _buttons.Remove(bt);
@@ -121,7 +136,7 @@ public class DialogueManager : MonoBehaviour
                 Button button = Instantiate(_buttonChoice, _canvas.transform);
                 _buttons.Add(button);
                 button.GetComponent<RectTransform>().localPosition = buttonPos[i];
-                button.GetComponentInChildren<TextMeshProUGUI>().text = DialogueNext.choix[i].name;
+                button.GetComponentInChildren<TextMeshProUGUI>().text = ">" + DialogueNext.choix[i].Name + "<";
                 Dialogues curDial = DialogueNext.choix[i];
                 button.onClick.AddListener(delegate { NextDialogue(curDial); });
             }
@@ -133,10 +148,9 @@ public class DialogueManager : MonoBehaviour
         if(_isDialogueStarted)
         { 
             _dialogueBoxTransform.localPosition = Vector3.Lerp(_dialogueBoxTransform.localPosition, _position, .1f);
-            _textSwitchButton.text = "Stop";
-        }else
+        }
+        else
         {
-            _textSwitchButton.text = "Start";
             _dialogueBoxTransform.localPosition = Vector3.Lerp(_dialogueBoxTransform.localPosition, _basePosition, .1f);
         }
     }

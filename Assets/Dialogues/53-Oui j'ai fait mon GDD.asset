@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 53-Oui j'ai fait mon GDD
+  m_EditorClassIdentifier: 
+  Name: '"Oui oui je l''ai fait"'
+  Dialogue: "Parfait. On est Mercredi, t'es \xE0 combien de pourcent de ton projet
+    ?"
+  greenFlag: 1
+  redFlag: 0
+  Williams: 1
+  choix:
+  - {fileID: 11400000, guid: 8bff9ebefc2428c47811dc8c1a679b8e, type: 2}
+  - {fileID: 11400000, guid: d3910e16fd9cdb7408e73f1f03ee6588, type: 2}
+  - {fileID: 11400000, guid: 3ad81ba0e7a972e46bdae0d5accdf454, type: 2}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []

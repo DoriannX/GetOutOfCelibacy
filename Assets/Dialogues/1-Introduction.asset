@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
+  m_Name: 1-Introduction
+  m_EditorClassIdentifier: 
+  Name: 'Introductio '
+  Dialogue: "France - De nos jours Apr\xE8s 19 ans de c\xE9libat, le moment est enfin
+    venu de changer les choses. Aujourd\u2019hui marque un tournant : je vais trouver
+    un partenaire. Pour y parvenir, je dois d\xE9couvrir et r\xE9pondre aux attentes
+    de cette personne. Ce ne sera pas une t\xE2che facile, mais l\u2019enjeu en vaut
+    la peine."
+  greenFlag: 0
+  redFlag: 0
+  Williams: 0
+  choix:
+  - {fileID: 11400000, guid: 1f70ab8e9307f7c4282c82f9ca4a79b3, type: 2}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
