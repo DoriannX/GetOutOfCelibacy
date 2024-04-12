@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: '"Oulah ! Qu''est ce qui ce passe ?"'
   Dialogue: "Montre moi ton gdd d\xE9p\xE8che toi"
   greenFlag: 0
-  redFlag: 0
+  redFlag: 1
   Williams: 1
   choix:
   - {fileID: 11400000, guid: a1ad3e0c8f5436a488d7ee5c47c3ce84, type: 2}
@@ -23,3 +23,4 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls: []
+  HasToTransform: 0
