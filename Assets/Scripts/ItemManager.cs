@@ -40,7 +40,7 @@ public class ItemManager : MonoBehaviour
         _itemsPositions.Add(_firstItemBasePosition);
         for(int i = 1; i < _itemPrefabs.Count; i++)
         {
-            _itemsPositions.Add(_itemsPositions[i - 1] + new Vector3(0, 100, 0));
+            _itemsPositions.Add(_itemsPositions[i - 1] + new Vector3(0, 75, 0));
         }
     }
 

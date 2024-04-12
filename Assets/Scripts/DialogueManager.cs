@@ -61,6 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     private void StartDialogue()
     {
+        ScoreManager.Instance.ResetScore();
         _isDialogueStarted = true;
         _dialogueDisplayer.text = "";
         _textIndex = 0;
@@ -73,6 +74,10 @@ public class DialogueManager : MonoBehaviour
 
     public void NextDialogue(Dialogues nextDialogue)
     {
+        if(nextDialogue.redFlag)
+            ScoreManager.Instance.AddScore(-1);
+        else if(nextDialogue.greenFlag)
+            ScoreManager.Instance.AddScore(1);
         ItemManager.Instance.DisplayObjectToSelect();
         bool isWilliams = (nextDialogue.Williams);
         if (nextDialogue.greenFlag)

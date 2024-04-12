@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
   m_Name: 17-Tu regardes youtube un peu
   m_EditorClassIdentifier: 
-  Name: '"Et tur regardes un peu youtube ?"'
+  Name: '"Et tu regardes un peu youtube ?"'
   Dialogue: "Oui, c'est qui ton youtuber pr\xE9f\xE9r\xE9 ? "
   greenFlag: 0
   redFlag: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
   m_Name: 15-Vodka
   m_EditorClassIdentifier: 
-  Name: '"De la bone Vodka !"'
+  Name: '"De la bonne Vodka !"'
   Dialogue: "Quoi ? De l'alcool fort ? Mais \xE7a ne va pas ou quoi ? Je ne peux
     pas sortir avec un alcoolique.. Je pense que \xE7a va \xEAtre compliqu\xE9 entre
     nous"

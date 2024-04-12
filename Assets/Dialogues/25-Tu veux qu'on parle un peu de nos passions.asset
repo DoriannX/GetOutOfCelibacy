@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4bde8dfb5afa246b8e3661634178b0, type: 3}
   m_Name: 25-Tu veux qu'on parle un peu de nos passions
   m_EditorClassIdentifier: 
-  Name: '"Parlosn un peu de nos passions si tu veux bien"'
+  Name: '"Parlons un peu de nos passions si tu veux bien"'
   Dialogue: Oui, alors. Qu'est ce que tu aimes dans la vie ?
   greenFlag: 0
   redFlag: 0
