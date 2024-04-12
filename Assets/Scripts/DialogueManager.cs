@@ -74,7 +74,9 @@ public class DialogueManager : MonoBehaviour
 
     public void NextDialogue(Dialogues nextDialogue)
     {
-        if(nextDialogue.redFlag)
+        if (nextDialogue.HasToTransform)
+            ParticleManager.Instance.Explode();
+        if (nextDialogue.redFlag)
             ScoreManager.Instance.AddScore(-1);
         else if(nextDialogue.greenFlag)
             ScoreManager.Instance.AddScore(1);

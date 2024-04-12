@@ -13,4 +13,5 @@ public class Dialogues : ScriptableObject
     public bool Williams;
     public List<Dialogues> choix = null;
     public UnityEvent Event;
+    public bool HasToTransform;
 }

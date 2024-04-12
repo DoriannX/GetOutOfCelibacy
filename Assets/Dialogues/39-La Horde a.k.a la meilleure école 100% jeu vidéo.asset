@@ -27,3 +27,4 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls: []
+  HasToTransform: 1
